@@ -1,9 +1,17 @@
-A fork of the `react-scripts` package from `create-react-app` with an
-application template and webpack configurations for LMN projects.
+# @lostmyname/react-scripts
+
+A fork of the [react-scripts](https://www.npmjs.com/package/react-scripts) package from the [create-react-app](https://github.com/facebookincubator/create-react-app) monorepo.
+
+## Features
+
+- [Application template](https://github.com/lostmyname-labs/create-lmn-app/tree/master/packages/react-scripts/template)
+- [webpack configs](https://github.com/lostmyname-labs/create-lmn-app/tree/master/packages/react-scripts/config)
 
 ## Creating a new app
 
-```
+Boot up a new app using the [create-react-api](https://www.npmjs.com/package/create-react-app) CLI tool.
+
+```sh
 npm install -g create-react-app
 
 create-react-app --scripts-version @lostmyname/react-scripts my-app
@@ -13,11 +21,11 @@ npm start
 
 ## Maintenance
 
-### Releasing a version
+### Releasing a new version
 
 Submit changes in a PR. Once they're merged into master
 
-```
+```sh
 npm version <major|minor|patch>
 npm publish
 git push
@@ -27,7 +35,7 @@ git push
 
 It's a good idea to assess and stay up-to-date with upstream changes.
 
-```
+```sh
 git remote add upstream https://github.com/facebookincubator/create-react-app.git
 
 ## Merge upstream changes into a new branch so that the changes can be reviewed in a PR.
