@@ -1,0 +1,9 @@
+{% extends "application.html" %}
+
+{% block content %}
+  <h1>{{ title }}</h1>
+  <div>{{ body }}</div>
+  {% if json %}
+    <pre>{{ json | json(true) }}</pre>
+  {% endif %}
+{% endblock %}
