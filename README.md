@@ -1,6 +1,7 @@
 # @lostmyname/react-scripts
 
-A fork of the [react-scripts](https://www.npmjs.com/package/react-scripts) package from the [create-react-app](https://github.com/facebookincubator/create-react-app) monorepo.
+A custom version of the [react-scripts](https://www.npmjs.com/package/react-scripts) package
+within a fork of the [create-react-app](https://github.com/facebookincubator/create-react-app) monorepo.
 
 ## Features
 
@@ -19,11 +20,21 @@ cd my-app/
 npm start
 ```
 
-## Maintenance
+## Development
+
+Before publishing to npm you can develop locally:
+
+```sh
+cd packages/react-scripts
+npm install
+node ./bin/react-scripts <start|build|test>
+```
+
+(The paths configuration [detects](https://github.com/lostmyname-labs/react-scripts/blob/master/packages/react-scripts/config/paths.js#L79) if react-scripts is being run in development).
 
 ### Releasing a new version
 
-Submit changes in a PR. Once they're merged into master
+Submit changes in a PR. Once they're merged into master:
 
 ```sh
 npm version <major|minor|patch>
@@ -33,7 +44,7 @@ git push
 
 ### Upstream changes
 
-It's a good idea to assess and stay up-to-date with upstream changes.
+It's a good idea to assess and stay up-to-date with upstream changes:
 
 ```sh
 git remote add upstream https://github.com/facebookincubator/create-react-app.git
