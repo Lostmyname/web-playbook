@@ -13,14 +13,14 @@ var spawn = require('cross-spawn');
 var chalk = require('chalk');
 
 module.exports = function(appPath, appName, verbose, originalDirectory) {
-  var ownPackageName = require(path.join(__dirname, '..', 'package.json')).name;
+  var ownPackage = require(path.join(__dirname, '..', 'package.json'));
+  var ownPackageName = ownPackage.name;
   var ownPath = path.join(appPath, 'node_modules', ownPackageName);
   var appPackage = require(path.join(appPath, 'package.json'));
   var useYarn = fs.existsSync(path.join(appPath, 'yarn.lock'));
 
-  // Copy over some of the devDependencies
-  appPackage.dependencies = appPackage.dependencies || {};
-  appPackage.devDependencies = appPackage.devDependencies || {};
+  // Get bundled dependencies from react-scripts' devDependencies
+  appPackage.dependencies = ownPackage.devDependencies || {};
 
   // Setup the script rules
   appPackage.scripts = {
@@ -58,8 +58,7 @@ module.exports = function(appPath, appName, verbose, originalDirectory) {
     }
   });
 
-  // Run yarn or npm for react and react-dom
-  // TODO: having to do two npm/yarn installs is bad, can we avoid it?
+  // Ensure the latest version of react and react-dom get installed
   var command;
   var args;
 
@@ -76,7 +75,7 @@ module.exports = function(appPath, appName, verbose, originalDirectory) {
   }
   args.push('react', 'react-dom');
 
-  console.log('Installing react and react-dom using ' + command + '...');
+  console.log('Installing bundled dependencies using ' + command + '...');
   console.log();
 
   var proc = spawn(command, args, {stdio: 'inherit'});
