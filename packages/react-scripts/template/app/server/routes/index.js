@@ -1,10 +1,6 @@
-var express = require('express')
-var root = require('./root')
-var orgs = require('./orgs')
+var express = require('express');
+var root = require('./root');
 
-var routes = express.Router()
+var routes = module.exports = express.Router();
 
-routes.use('/', root)
-routes.use('/orgs', orgs)
-
-module.exports = routes
+routes.use('/', root);
