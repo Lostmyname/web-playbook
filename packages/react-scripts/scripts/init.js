@@ -27,8 +27,7 @@ module.exports = function(appPath, appName, verbose, originalDirectory) {
     'server': 'react-scripts server',
     'start': 'react-scripts start',
     'build': 'react-scripts build',
-    'test': 'react-scripts test --env=jsdom',
-    'eject': 'react-scripts eject'
+    'test': 'react-scripts test --env=jsdom'
   };
 
   fs.writeFileSync(
