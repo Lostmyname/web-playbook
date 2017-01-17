@@ -1,5 +1,5 @@
 var WebpackDevServer = require('webpack-dev-server');
-var config = require('../config/webpack.config.dev');
+var config = require('../../config/webpack.config.dev');
 
 module.exports = function createWebpackDevServer(compiler, protocol, host, proxyTarget) {
   return new WebpackDevServer(compiler, {
