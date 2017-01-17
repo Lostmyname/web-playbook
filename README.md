@@ -1,16 +1,21 @@
-# @lostmyname/react-scripts
+# web-playbook
 
-A custom version of the [react-scripts](https://www.npmjs.com/package/react-scripts) package
-within a fork of the [create-react-app](https://github.com/facebookincubator/create-react-app) monorepo.
+> _(noun)_ a book containing a team's strategies and plays
 
-## Features
+This repo is the foundation of how we build for the web. It documents, by example, our key plays (architectural patterns for building web apps). In addition the playbook provides a single unified infrastructure.
 
-- [Application template](https://github.com/lostmyname-labs/create-lmn-app/tree/master/packages/react-scripts/template)
-- [webpack configs](https://github.com/lostmyname-labs/create-lmn-app/tree/master/packages/react-scripts/config)
+So this is a living project: the tooling in this repo powers our web applications day to day and all our architectural patterns start out in development here - this is their canonical home.
+
+You can [run](#development) the playbook locally or use it to [generate](#creating-a-new-app) a new app or playground. The generated project comes with tooling and boilerplate code pre-packaged and ready to boot.
+
+## Contents 
+
+- [Infrastructure](https://github.com/lostmyname-labs/create-lmn-app/tree/master/packages/react-scripts/)
+- [Architecture](https://github.com/lostmyname-labs/create-lmn-app/tree/master/packages/react-scripts/template)
 
 ## Creating a new app
 
-Boot up a new app using the [create-react-api](https://www.npmjs.com/package/create-react-app) CLI tool.
+Boot up a new app using the [create-react-app](https://www.npmjs.com/package/create-react-app) CLI tool.
 
 ```sh
 npm install -g create-react-app
@@ -21,6 +26,10 @@ npm start
 ```
 
 ## Development
+
+The repo is a fork of the [create-react-app](https://github.com/facebookincubator/create-react-app) monorepo but only contains  a custom version of the [react-scripts](https://www.npmjs.com/package/react-scripts) package.
+
+### Running locally
 
 Before publishing to npm you can develop locally:
 
