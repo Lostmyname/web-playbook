@@ -4,7 +4,7 @@
 
 This repo is the foundation of how we build for the web. It documents, by example, our key plays (architectural patterns for building web apps). In addition the playbook provides a single unified infrastructure.
 
-So this is a living project: the tooling in this repo powers our web applications day to day and all our architectural patterns start out in development here - this is their canonical home.
+So this is a living project: the tooling in this repo powers our web applications day to day and all our architectural patterns are tried, tested and documented here first - this is their canonical home.
 
 You can [run](#development) the playbook locally or use it to [generate](#creating-a-new-app) a new app or playground. The generated project comes with tooling and boilerplate code pre-packaged and ready to boot.
 
