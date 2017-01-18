@@ -9,7 +9,6 @@
  */
 // @remove-on-eject-end
 
-var autoprefixer = require('autoprefixer');
 var webpack = require('webpack');
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');

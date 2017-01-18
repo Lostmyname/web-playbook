@@ -12,7 +12,6 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ManifestPlugin = require('webpack-manifest-plugin');
-var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 var StyleLintPlugin = require('stylelint-webpack-plugin');
 var url = require('url');
 var paths = require('./paths');
