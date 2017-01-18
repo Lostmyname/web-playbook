@@ -91,7 +91,7 @@ module.exports = {
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
       // Access our required modules with a short alias
-      component: path.resolve('./node_modules/@lostmyname/components/dist'),
+      components: path.resolve('./node_modules/@lostmyname/components/dist'),
       chameleon: path.resolve('./node_modules/chameleon-sass/assets/stylesheets'),
       css: path.resolve('./node_modules/@lostmyname/css/scss'),
       fonts: path.resolve('./node_modules/@lostmyname/css/fonts'),
@@ -222,7 +222,7 @@ module.exports = {
     // Will automcatically run Stylelint on all css files
     new StyleLintPlugin({
       configFile: path.join(__dirname, '../.stylelintrc')
-    }),
+    })
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.

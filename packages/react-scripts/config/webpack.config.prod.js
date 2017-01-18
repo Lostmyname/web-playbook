@@ -9,9 +9,7 @@
  */
 // @remove-on-eject-end
 
-var autoprefixer = require('autoprefixer');
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ManifestPlugin = require('webpack-manifest-plugin');
 var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
@@ -101,7 +99,7 @@ module.exports = {
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
       // Alias all our core modules
-      component: path.resolve('./node_modules/@lostmyname/components/dist'),
+      components: path.resolve('./node_modules/@lostmyname/components/dist'),
       chameleon: path.resolve('./node_modules/chameleon-sass/assets/stylesheets'),
       css: path.resolve('./node_modules/@lostmyname/css/scss'),
       fonts: path.resolve('./node_modules/@lostmyname/css/fonts'),
@@ -215,13 +213,6 @@ module.exports = {
     ]
   },
   plugins: [
-    // Makes the public URL available as %PUBLIC_URL% in index.html, e.g.:
-    // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    // In production, it will be an empty string unless you specify "homepage"
-    // in `package.json`, in which case it will be the pathname of that URL.
-    new InterpolateHtmlPlugin({
-      PUBLIC_URL: publicUrl
-    }),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
@@ -271,6 +262,10 @@ module.exports = {
           }
         }
       }
+    }),
+    // Will automcatically run Stylelint on all css files
+    new StyleLintPlugin({
+      configFile: path.join(__dirname, '../.stylelintrc')
     })
   ],
   // Some libraries import Node modules but don't use them in the browser.
