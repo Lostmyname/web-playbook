@@ -90,9 +90,9 @@ module.exports = {
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
       // Access our required modules with a short alias
-      components: path.resolve('./node_modules/@lostmyname/components/dist'),
+      '@lostmyname/components': path.resolve('./node_modules/@lostmyname/components/dist'),
       chameleon: path.resolve('./node_modules/chameleon-sass/assets/stylesheets'),
-      css: path.resolve('./node_modules/@lostmyname/css/scss'),
+      '@lostmyname/css': path.resolve('./node_modules/@lostmyname/css/scss'),
       fonts: path.resolve('./node_modules/@lostmyname/css/fonts'),
       scss: path.resolve('./src/scss'),
       helpers: path.resolve('./src/js/helpers')
