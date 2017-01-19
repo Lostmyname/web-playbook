@@ -82,17 +82,11 @@ module.exports = {
     publicPath: publicPath
   },
   resolve: {
-    // This allows you to set a fallback for where Webpack should look for modules.
-    // We read `NODE_PATH` environment variable in `paths.js` and pass paths here.
-    // We use `fallback` instead of `root` because we want `node_modules` to "win"
-    // if there any conflicts. This matches Node resolution mechanism.
-    // https://github.com/facebookincubator/create-react-app/issues/253
-    fallback: paths.nodePaths,
     // These are the reasonable defaults supported by the Node ecosystem.
     // We also include JSX as a common component filename extension to support
     // some tools, although we do not recommend using it, see:
     // https://github.com/facebookincubator/create-react-app/issues/290
-    extensions: ['.js', '.json', '.jsx', '.scss', ''],
+    extensions: ['.js', '.json', '.jsx', '.scss'],
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
@@ -110,8 +104,7 @@ module.exports = {
   // Resolve loaders (webpack plugins for CSS, images, transpilation) from the
   // directory of `react-scripts` itself rather than the project directory.
   resolveLoader: {
-    modules: paths.ownNodeModules,
-    moduleTemplates: ['*-loader']
+    modules: [paths.ownNodeModules]
   },
   // @remove-on-eject-end
   module: {
@@ -195,7 +188,7 @@ module.exports = {
 
       // Find svg images from the /images/ folder and use the svg-url-loader
       {
-        test: /images\/.*\.svg$/i,
+        test: /\.svg$/,
         loader: 'svg-url-loader'
       },
 
