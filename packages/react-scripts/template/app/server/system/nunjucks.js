@@ -1,5 +1,6 @@
-var nunjucks = require('nunjucks')
+var nunjucks = require('nunjucks');
 var { getAssetPath } = require('../lib/assets');
+var { isDev } = require('./index');
 
 module.exports = function initNunjucks({ app, viewFolder }) {
   nunjucks
@@ -8,8 +9,9 @@ module.exports = function initNunjucks({ app, viewFolder }) {
       autoescape: true
     })
     .addGlobal('env', process.env)
+    .addGlobal('dev', isDev())
     .addFilter('asset', getAssetPath)
     .addFilter('json', function (data, indentation = false) {
       return JSON.stringify(data, 0, indentation ? 2 : 0);
-    })
-}
+    });
+};

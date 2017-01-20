@@ -2,10 +2,13 @@
 <html>
   <head>
     <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    {% if not dev %}
+      <link rel="stylesheet" href="{{ 'main.css' | asset }}" />
+    {% endif %}
   </head>
   <body>
     {% block content %}{% endblock %}
-    <script src="{{ 'bundle' | asset }}"></script>
+    <div id="root"></div>
+    <script src="{{ 'main.js' | asset }}"></script>
   </body>
 </html>
