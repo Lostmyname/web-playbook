@@ -8,7 +8,7 @@ Before publishing to npm you can develop locally:
 
 ```sh
 cd packages/react-scripts # run tooling from its own folder
-npm link && npm link @lostmyname/react-scripts # reference itself when required in boilerplate (this also runs npm install on itself)
+npm link && npm link @lostmyname/react-scripts # make package available to itself in template/ (also installs own dependencies)
 node ./bin/react-scripts <start|build|test> # run own npm bin scripts
 ```
 
