@@ -1,5 +1,5 @@
 process.env.NODE_ENV = 'development';
-require('dotenv').config({silent: true});
+require('dotenv').config({ silent: true });
 
 var fs = require('fs');
 var http = require('http');
@@ -9,11 +9,11 @@ var checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
 var clearConsole = require('react-dev-utils/clearConsole');
 var getProcessForPort = require('react-dev-utils/getProcessForPort');
 var prompt = require('react-dev-utils/prompt');
-var createWebpackCompiler = require('./lib/createWebpackCompiler');
-var createWebpackDevServer = require('./lib/createWebpackDevServer');
-var runWebServer = require('./lib/runWebServer');
-var runWebpackDevServer = require('./lib/runWebpackDevServer');
-var getPort = require('./lib/getPort');
+var createWebpackCompiler = require('../utils/createWebpackCompiler');
+var createWebpackDevServer = require('../utils/createWebpackDevServer');
+var runWebServer = require('../utils/runWebServer');
+var runWebpackDevServer = require('../utils/runWebpackDevServer');
+var getPort = require('../utils/getPort');
 var paths = require('../config/paths');
 var app = require(paths.serverIndexJs);
 
@@ -33,7 +33,7 @@ function run(port) {
   }
 
   var devPort = port + 1;
-  var protocol = process.env.HTTPS === 'true' ? "https" : "http";
+  var protocol = process.env.HTTPS === 'true' ? 'https' : 'http';
   var host = process.env.HOST || 'localhost';
   var proxyTarget = `${protocol}://${host}:${port}`;
 

@@ -1,7 +1,7 @@
 var chalk = require('chalk');
 var http = require('http');
-var getPort = require('./lib/getPort');
-var runWebServer = require('./lib/runWebServer');
+var getPort = require('../utils/getPort');
+var runWebServer = require('../utils/runWebServer');
 var paths = require('../config/paths');
 
 if (process.env.NODE_ENV !== 'production') {

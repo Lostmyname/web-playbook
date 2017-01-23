@@ -1,7 +1,7 @@
 var chalk = require('chalk');
 var historyApiFallback = require('connect-history-api-fallback');
 var httpProxyMiddleware = require('http-proxy-middleware');
-var paths = require('../../config/paths');
+var paths = require('../config/paths');
 
 module.exports = function addWebpackMiddleware(devServer) {
   // `proxy` lets you to specify a fallback server during development.
