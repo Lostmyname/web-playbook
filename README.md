@@ -6,7 +6,7 @@ This repo is the foundation of how we build for the web. It documents, by exampl
 
 So this is a living project: the tooling in this repo powers our web applications day to day, and all our architectural patterns are tried, tested and documented here first - this is their canonical home.
 
-You can [run](CONTRIBUTING.md#development) the playbook locally or use it to [generate](#creating-a-new-app) a new app or playground. The generated app comes complete with tooling and boilerplate code, ready for you to start building your next project or proof of concept immediately.
+You can [run the playbook locally](CONTRIBUTING.md#development) or use it to [generate a new app or playground](#creating-a-new-app). The generated app comes complete with tooling and boilerplate code, ready for you to start building your next project or proof of concept immediately.
 
 ## Packages
 
