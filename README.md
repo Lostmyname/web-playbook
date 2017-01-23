@@ -1,27 +1,73 @@
 # web-playbook
 
-> _(noun)_ a book containing a team's strategies and plays
+If you want to know how to build something for the world wide web at Lost My Name, this is your guide.
 
-This repo is the foundation of how we build for the web. It documents, by example, our key plays (architectural patterns for building web apps). In addition the playbook provides a single unified infrastructure.
+It documents, by example, our key plays (patterns for building web apps) and provides a single unified infrastructure.
 
-So this is a living project: the tooling in this repo powers our web applications day to day, and all our architectural patterns are tried, tested and documented here first - this is their canonical home.
+This is a living project: the tooling in this repo powers our web applications day to day, and all our architectural patterns are tried, tested and documented first here - its their canonical home.
 
-You can [run the playbook locally](CONTRIBUTING.md#development) or use it to [generate a new app or playground](#creating-a-new-app). The generated app comes complete with tooling and boilerplate code, ready for you to start building your next project or proof of concept immediately.
+[Read more about it on Medium](https://medium.com/@danieljohngrant/introducing-playbook-8cc7e9efc8e8#.cfk6dlm66)
 
-## Packages
+## The plays
 
-- [react-scripts (infrastructure)](https://github.com/lostmyname-labs/create-lmn-app/tree/master/packages/react-scripts/)
-- [react-scripts/template (architecture)](https://github.com/lostmyname-labs/create-lmn-app/tree/master/packages/react-scripts/template)
+### Prototyping
+- 🆕 Create a new app (with every play implemented)
 
-## Creating a new app
+  ```sh
+  npm install -g create-react-app
+  create-react-app --scripts-version @lostmyname/react-scripts my-app
+  ```
+- ✏️️ [Use the playbook to
+test ideas and get feedback](CONTRIBUTING.md)
 
-Boot up a new app using the [create-react-app](https://www.npmjs.com/package/create-react-app) CLI tool.
+### Tooling
 
-```sh
-npm install -g create-react-app
-create-react-app --scripts-version @lostmyname/react-scripts my-app
-```
+- 📦 Build with zero config
+- 💻 Run a development server
 
-## Contributing
+### Code
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on how to get up and running in your dev environment and how to make contributions.
+- 🎛 Transpile from ES2017+ source code
+- 📺 Lint code in IDEs and CI
+- 🖌️ Polyfill code on a per browser basis
+
+### Testing
+
+- 🌎 Run E2E tests in real browsers
+
+### Data
+
+- 📯 Declare data requirements in components
+
+### Accessibility
+
+- 📲 Appear on smartphone home screens
+- ⛑ Control title and meta data from within components
+
+### Performance
+
+- 👀 Render React on the server
+- ✂️ Code splitting
+- 🏜 Bundling images and fonts
+- 🔬 Analyse compiled code
+- 🐘 Cache assets
+- 😎 Provide offline support with a service worker
+
+### Security
+
+- 👮 Mitigate ... (helmet and hpp)
+- 🛂 Validate http requests
+- 🚫 Handle errors
+
+### Deployment
+
+- 🛤️ Running CI on Travis
+- 🚀 Deploying to Heroku
+
+## Credits
+
+[create-react-app](https://github.com/facebookincubator/create-react-app) - our customised react-scripts package is forked from CRA. The CRA CLI tool is used to build new apps.
+
+[react-universally]() - a great boilerplate from which some ideas were taken, mainly the emojis.
+
+[express-generator]()

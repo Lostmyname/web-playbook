@@ -33,7 +33,8 @@ git remote add upstream https://github.com/facebookincubator/create-react-app.gi
 
 ## Merge upstream changes into a new branch so that the changes can be reviewed in a PR.
 git checkout -b feature/upstream
-git merge upstream master
+git fetch upstream
+git merge upstream/master
 
 ## The upstream repo contains other packages, which have been deleted from this repo.
 ## This command removes changes to them from the merge.
