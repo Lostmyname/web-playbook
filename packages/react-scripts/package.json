@@ -22,6 +22,7 @@
   "bin": {
     "react-scripts": "./bin/react-scripts.js"
   },
+  "main": "./lib/index.js",
   "dependencies": {
     "@lostmyname/stylelint-config-lmn": "^1.1.0",
     "autoprefixer": "6.5.1",
@@ -63,8 +64,8 @@
     "svg-url-loader": "^1.1.0",
     "url-loader": "0.5.7",
     "webpack": "2.2.0",
+    "webpack-assets-manifest": "^0.6.1",
     "webpack-dev-server": "1.16.2",
-    "webpack-manifest-plugin": "1.1.0",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {

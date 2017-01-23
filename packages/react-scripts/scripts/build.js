@@ -156,7 +156,6 @@ function build(previousSizeMap) {
     printFileSizes(stats, previousSizeMap);
     console.log();
 
-    var openCommand = process.platform === 'win32' ? 'start' : 'open';
     var appPackage  = require(paths.appPackageJson);
     var homepagePath = appPackage.homepage;
     var publicPath = config.output.publicPath;
@@ -212,24 +211,12 @@ function build(previousSizeMap) {
         console.log('  ' + chalk.green('"homepage"') + chalk.cyan(': ') + chalk.green('"http://myname.github.io/myapp"') + chalk.cyan(','));
         console.log();
       }
-      console.log('The ' + chalk.cyan('build') + ' folder is ready to be deployed.');
-      console.log('You may also serve it locally with a static server:')
-      console.log();
-      if (useYarn) {
-        console.log('  ' + chalk.cyan('yarn') +  ' global add pushstate-server');
-      } else {
-        console.log('  ' + chalk.cyan('npm') +  ' install -g pushstate-server');
-      }
-      console.log('  ' + chalk.cyan('pushstate-server') + ' build');
-      console.log('  ' + chalk.cyan(openCommand) + ' http://localhost:9000');
-      console.log();
     }
   });
 }
 
 function copyPublicFolder() {
   fs.copySync(paths.appPublic, paths.appBuild, {
-    dereference: true,
-    filter: file => file !== paths.appHtml
+    dereference: true
   });
 }

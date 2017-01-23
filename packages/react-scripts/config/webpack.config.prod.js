@@ -11,7 +11,8 @@
 
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var ManifestPlugin = require('webpack-manifest-plugin');
+// Chosen over webpack-manifest-plugin for having a more powerful api and modular source code
+var WebpackAssetsManifest = require('webpack-assets-manifest');
 var StyleLintPlugin = require('stylelint-webpack-plugin');
 var url = require('url');
 var paths = require('./paths');
@@ -28,9 +29,8 @@ function ensureSlash(path, needsSlash) {
     return path.substr(path, path.length - 1);
   } else if (!hasSlash && needsSlash) {
     return path + '/';
-  } else {
-    return path;
   }
+  return path;
 }
 
 // We use "homepage" field to infer "public path" at which the app is served.
@@ -38,6 +38,7 @@ function ensureSlash(path, needsSlash) {
 // single-page apps that may serve index.html for nested URLs like /todos/42.
 // We can't use a relative path in HTML because we don't want to load something
 // like /todos/42/static/js/bundle.7289d.js. We have to know the root.
+// @todo Should we use env.ASSET_HOST instead?
 var homepagePath = require(paths.appPackageJson).homepage;
 var homepagePathname = homepagePath ? url.parse(homepagePath).pathname : '/';
 // Webpack uses `publicPath` to determine where the app is being served from.
@@ -76,9 +77,10 @@ module.exports = {
     // Generated JS file names (with nested folders).
     // There will be one main bundle, and one file per asynchronous chunk.
     // We don't currently advertise code splitting but Webpack supports it.
-    filename: 'static/js/[name].[chunkhash:8].js',
-    chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
+    filename: '[name].[chunkhash:8].js',
+    chunkFilename: '[name].[chunkhash:8].chunk.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
+    // @todo Does this have any impact in production?
     publicPath: publicPath
   },
   resolve: {
@@ -229,12 +231,17 @@ module.exports = {
       }
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
-    new ExtractTextPlugin('static/css/[name].[contenthash:8].css'),
+    new ExtractTextPlugin('[name].[contenthash:8].css'),
     // Generate a manifest file which contains a mapping of all asset filenames
-    // to their corresponding output file so that tools can pick it up without
-    // having to parse `index.html`.
-    new ManifestPlugin({
-      fileName: 'asset-manifest.json'
+    // to their corresponding output file
+    // Note that paths included in a filename will not be included in the manifest keys
+    // e.g. js/[name].[contenthash:8].js would be keyed by [name].js only
+    // This means templates can only reference assets by their filename, not a path
+    // so don't include paths in filenames!
+    new WebpackAssetsManifest({
+      publicPath: path.join(publicPath, 'static/'),
+      // Not required so skip step
+      sortManifest: false
     }),
     // This is still required ofr building currently
     new webpack.LoaderOptionsPlugin({

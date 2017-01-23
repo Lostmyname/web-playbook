@@ -1,4 +1,4 @@
-require('isomorphic-fetch')
+require('isomorphic-fetch');
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
@@ -23,15 +23,21 @@ app.use(express.static(publicFolder));
 
 app.use(routes);
 
+// Static files will almost certainly be served behind a CDN e.g. fastly
+// in which case this will only serve to handle requests to warm up the cache.
+// If the CDN routes requests to a static server (assuming assets are uploaded
+// there when the app gets deployed) requests will never reach this server.
+app.use(express.static('build'));
+
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

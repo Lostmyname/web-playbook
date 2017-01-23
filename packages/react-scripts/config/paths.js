@@ -40,30 +40,14 @@ var nodePaths = (process.env.NODE_PATH || '')
   .filter(folder => !path.isAbsolute(folder))
   .map(resolveApp);
 
-// config after eject: we're in ./config/
-module.exports = {
-  appBuild: resolveApp('build'),
-  appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
-  appIndexJs: resolveApp('app/client/index.js'),
-  appPackageJson: resolveApp('package.json'),
-  appSrc: resolveApp('app/client'),
-  serverIndexJs: resolveApp('app/server/index.js'),
-  yarnLockFile: resolveApp('yarn.lock'),
-  testsSetup: resolveApp('src/setupTests.js'),
-  appNodeModules: resolveApp('node_modules'),
-  ownNodeModules: resolveApp('node_modules'),
-  nodePaths: nodePaths
-};
 
-// @remove-on-eject-begin
 function resolveOwn(relativePath) {
   return path.resolve(__dirname, relativePath);
 }
 
 // config before eject: we're in ./node_modules/react-scripts/config/
 module.exports = {
-  appBuild: resolveApp('build'),
+  appBuild: resolveApp('build/static'),
   appPublic: resolveApp('public'),
   appHtml: resolveApp('public/index.html'),
   appIndexJs: resolveApp('app/client/index.js'),
@@ -75,13 +59,14 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   // this is empty with npm3 but node resolution searches higher anyway:
   ownNodeModules: resolveOwn('../node_modules'),
+  manifest: resolveOwn('build/static/manifest.json'),
   nodePaths: nodePaths
 };
 
 // config before publish: we're in ./packages/react-scripts/config/
 if (__dirname.indexOf(path.join('packages', 'react-scripts', 'config')) !== -1) {
   module.exports = {
-    appBuild: resolveOwn('../../../build'),
+    appBuild: resolveOwn('../build/static'),
     appPublic: resolveOwn('../template/public'),
     appHtml: resolveOwn('../template/public/index.html'),
     appIndexJs: resolveOwn('../template/app/client/index.js'),
@@ -92,6 +77,7 @@ if (__dirname.indexOf(path.join('packages', 'react-scripts', 'config')) !== -1) 
     testsSetup: resolveOwn('../template/src/setupTests.js'),
     appNodeModules: resolveOwn('../node_modules'),
     ownNodeModules: resolveOwn('../node_modules'),
+    manifest: resolveOwn('../build/static/manifest.json'),
     nodePaths: nodePaths
   };
 }

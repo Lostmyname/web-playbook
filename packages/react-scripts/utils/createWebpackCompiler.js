@@ -2,7 +2,7 @@ var chalk = require('chalk');
 var webpack = require('webpack');
 var clearConsole = require('react-dev-utils/clearConsole');
 var formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
-var config = require('../../config/webpack.config.dev');
+var config = require('../config/webpack.config.dev');
 
 var isInteractive = process.stdout.isTTY;
 
