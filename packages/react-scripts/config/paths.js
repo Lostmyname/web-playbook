@@ -59,6 +59,7 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   // this is empty with npm3 but node resolution searches higher anyway:
   ownNodeModules: resolveOwn('../node_modules'),
+  manifest: resolveOwn('build/static/manifest.json'),
   nodePaths: nodePaths
 };
 
@@ -76,6 +77,7 @@ if (__dirname.indexOf(path.join('packages', 'react-scripts', 'config')) !== -1) 
     testsSetup: resolveOwn('../template/src/setupTests.js'),
     appNodeModules: resolveOwn('../node_modules'),
     ownNodeModules: resolveOwn('../node_modules'),
+    manifest: resolveOwn('../build/static/manifest.json'),
     nodePaths: nodePaths
   };
 }

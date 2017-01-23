@@ -22,6 +22,7 @@
   "bin": {
     "react-scripts": "./bin/react-scripts.js"
   },
+  "main": "./lib/index.js",
   "dependencies": {
     "@lostmyname/stylelint-config-lmn": "^1.1.0",
     "autoprefixer": "6.5.1",

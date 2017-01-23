@@ -7,9 +7,9 @@ The repo is a fork of the [create-react-app](https://github.com/facebookincubato
 Before publishing to npm you can develop locally:
 
 ```sh
-cd packages/react-scripts
-npm install
-node ./bin/react-scripts <start|build|test>
+cd packages/react-scripts # run tooling from its own folder
+npm link && npm link @lostmyname/react-scripts # reference itself when required in boilerplate (this also runs npm install on itself)
+node ./bin/react-scripts <start|build|test> # run own npm bin scripts
 ```
 
 (The paths configuration [detects](https://github.com/lostmyname-labs/react-scripts/blob/master/packages/react-scripts/config/paths.js#L79) if react-scripts is being run in development).

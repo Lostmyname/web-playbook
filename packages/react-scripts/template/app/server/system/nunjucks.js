@@ -1,5 +1,5 @@
 var nunjucks = require('nunjucks');
-var { getAssetPath } = require('../lib/assets');
+var { getAssetPath } = require('@lostmyname/react-scripts');
 var { isDev } = require('./index');
 
 module.exports = function initNunjucks({ app, viewFolder }) {
