@@ -11,7 +11,7 @@ This is a living project: the tooling in this repo powers our web applications d
 ## The plays
 
 ### Prototyping
-- 🆕 [Create a new app (with all the plays ready to boot)](plays/prototyping/create-a-new-app.md)
+- 🆕 [Create a new app (with plays included)](plays/prototyping/create-a-new-app.md)
 - ✏️️ [Create a new play](plays/prototyping/create-a-new-play.md)
 
 ### Tooling
@@ -62,6 +62,6 @@ This is a living project: the tooling in this repo powers our web applications d
 
 [create-react-app](https://github.com/facebookincubator/create-react-app) - our customised react-scripts package is forked from CRA. The CRA CLI tool is used to build new apps.
 
-[react-universally]() - a great boilerplate from which some ideas were taken, mainly the emojis.
+[react-universally](https://github.com/ctrlplusb/react-universally) - a great boilerplate from which some ideas were taken, mainly the emojis.
 
-[express-generator]()
+[express-generator](https://github.com/expressjs/generator)
