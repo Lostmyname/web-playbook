@@ -11,8 +11,8 @@ This is a living project: the tooling in this repo powers our web applications d
 ## The plays
 
 ### Prototyping
-- 🆕 [Create a new app (with all the plays ready to boot)](docs/create-a-new-app.md)
-- ✏️️ [Create a new play](docs/create-a-new-play.md)
+- 🆕 [Create a new app (with all the plays ready to boot)](plays/prototyping/create-a-new-app.md)
+- ✏️️ [Create a new play](plays/prototyping/create-a-new-play.md)
 
 ### Tooling
 
