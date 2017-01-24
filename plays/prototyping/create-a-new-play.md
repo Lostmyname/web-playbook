@@ -12,6 +12,8 @@ Here's some guidelines to get started creating one.
 
 ## Development of a play
 
+@todo move this into an issue template
+
 1. Create an issue defining the problem space. Tag it with `new play`.
 2. List the proposed play in [README.md](../README.md) linking it to issue.
 3. Open a PR defining the proposed solution.
@@ -21,6 +23,8 @@ Here's some guidelines to get started creating one.
 
 
 ## Anatomy of a play
+
+@todo move this into a template document and check list in a PR template
 
 - A play document in [/plays](../plays)
   - Expansion of the problem space
