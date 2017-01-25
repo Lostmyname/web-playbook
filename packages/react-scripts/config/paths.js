@@ -45,7 +45,7 @@ function resolveOwn(relativePath) {
   return path.resolve(__dirname, relativePath);
 }
 
-// config before eject: we're in ./node_modules/react-scripts/config/
+// config before eject: we're in ./node_modules/@lostmyname/react-scripts/config/
 module.exports = {
   appBuild: resolveApp('build/static'),
   appPublic: resolveApp('public'),
@@ -58,7 +58,7 @@ module.exports = {
   testsSetup: resolveApp('src/setupTests.js'),
   appNodeModules: resolveApp('node_modules'),
   // this is empty with npm3 but node resolution searches higher anyway:
-  ownNodeModules: resolveOwn('../node_modules'),
+  ownNodeModules: resolveOwn('../../node_modules'),
   manifest: resolveOwn('build/static/manifest.json'),
   nodePaths: nodePaths
 };
