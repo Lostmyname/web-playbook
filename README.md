@@ -10,35 +10,35 @@ This is a living project: the tooling in this repo powers our web applications d
 
 ## The plays
 
-### Prototyping
+#### Prototyping
 - 🆕 [Create a new app (with plays included)](plays/prototyping/create-a-new-app.md)
 - ✏️️ [Create a new play](plays/prototyping/create-a-new-play.md)
 
-### Tooling
+#### Tooling
 
 - 📦 Build with zero config
 - 💻 Run a development server
 
-### Code
+#### Code
 
 - 🎛 Transpile from ES2017+ source code
 - 📺 Lint code in IDEs and CI
 - 🖌️ Polyfill code on a per browser basis
 
-### Testing
+#### Testing
 
 - 🌎 Run E2E tests in real browsers
 
-### Data
+#### Data
 
 - 📯 Declare data requirements in components
 
-### Accessibility
+#### Accessibility
 
 - 📲 Appear on smartphone home screens
 - ⛑ Control title and meta data from within components
 
-### Performance
+#### Performance
 
 - 👀 Render React on the server
 - ✂️ Code splitting
@@ -47,13 +47,13 @@ This is a living project: the tooling in this repo powers our web applications d
 - 🐘 Cache assets
 - 😎 Provide offline support with a service worker
 
-### Security
+#### Security
 
 - 👮 Mitigate ... (helmet and hpp)
 - 🛂 Validate http requests
 - 🚫 Handle errors
 
-### Deployment
+#### Deployment
 
 - 🛤️ Running CI on Travis
 - 🚀 Deploying to Heroku
