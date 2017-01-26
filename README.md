@@ -15,7 +15,7 @@ This is a living project: the tooling in this repo powers our web applications d
 
 **Architecture**
 - ✏️️ [Create a new play](plays/architecture/create-a-new-play.md)
-- 🌎 [Write universal application](plays/architecture/write-universal-applications.md)
+- 🌎 [Write universal applications](plays/architecture/write-universal-applications.md)
 
 **Tooling**
 
