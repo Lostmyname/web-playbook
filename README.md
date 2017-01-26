@@ -57,11 +57,3 @@ This is a living project: the tooling in this repo powers our web applications d
 
 - 🛤️ Running CI on Travis
 - 🚀 Deploying to Heroku
-
-## Credits
-
-[create-react-app](https://github.com/facebookincubator/create-react-app) - our customised react-scripts package is forked from CRA. The CRA CLI tool is used to build new apps.
-
-[react-universally](https://github.com/ctrlplusb/react-universally) - a great boilerplate from which some ideas were taken, mainly the emojis.
-
-[express-generator](https://github.com/expressjs/generator)
