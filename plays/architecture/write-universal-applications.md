@@ -26,4 +26,4 @@ For example, [react-router](https://github.com/ReactTraining/react-router) can r
 
 This diagram shows univeral rendering, state resolution and state rehydration using [react](https://facebook.github.io/react/), [react-router](https://github.com/ReactTraining/react-router), [redux](http://redux.js.org/) and [react-jobs](https://github.com/ctrlplusb/react-jobs).
 
-![Universal technical diagram](https://i.imgur.com/2m5Mchq.png)
+![Universal technical diagram](https://i.imgur.com/dfxBUs0.png)
