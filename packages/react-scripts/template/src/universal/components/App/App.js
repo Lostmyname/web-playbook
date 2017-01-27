@@ -1,19 +1,17 @@
-import React from 'react';
-import './App.css';
+/* eslint-disable react/prefer-es6-class */
+// import './App.css';
+import React, { PropTypes } from 'react';
+import Clock from '../Clock';
 
-const App = React.createClass({
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/common/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-});
+var App = ({ children }) => (
+  <div>
+    <Clock />
+    {children}
+  </div>
+);
+
+App.propTypes = {
+  children: PropTypes.node
+};
 
 export default App;
