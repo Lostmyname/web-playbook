@@ -29,7 +29,7 @@ if (!checkRequiredFiles([paths.appIndexJs])) {
 
 function run(port) {
   if (isInteractive) {
-    // clearConsole();
+    clearConsole();
   }
 
   var devPort = port + 1;
@@ -61,7 +61,7 @@ detect(port).then(availablePort => {
   }
 
   if (isInteractive) {
-    // clearConsole();
+    clearConsole();
     var existingProcess = getProcessForPort(port);
     var question =
       chalk.yellow('Something is already running on port ' + port + '.' +

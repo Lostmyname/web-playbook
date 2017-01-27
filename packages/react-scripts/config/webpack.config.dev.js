@@ -125,12 +125,8 @@ module.exports = {
           babelrc: false,
           presets: [
             require.resolve('babel-preset-react'),
-            [require.resolve('babel-preset-es2015'), {
-              modules: false
-            }]
-          ],
-          plugins: [
-            require.resolve('babel-plugin-transform-object-rest-spread')
+            require.resolve('babel-preset-stage-3'),
+            ['latest', { es2015: { modules: false } }]
           ],
           // This is a feature of `babel-loader` for webpack (not Babel itself).
           // It enables caching results in ./node_modules/.cache/babel-loader/
