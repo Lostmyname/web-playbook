@@ -4,7 +4,7 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var routes = require('./routes');
+import react from './middleware/react';
 var initNunjucks = require('./system/nunjucks');
 var viewFolder = path.join(__dirname, 'views');
 var publicFolder = path.join(__dirname, 'public');
@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(publicFolder));
 
-app.use(routes);
+app.get('*', react);
 
 // Static files will almost certainly be served behind a CDN e.g. fastly
 // in which case this will only serve to handle requests to warm up the cache.
