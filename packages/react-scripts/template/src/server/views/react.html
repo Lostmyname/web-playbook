@@ -2,5 +2,7 @@
 
 {% block content %}
   <div id="root">{{ appHtml | safe }}</div>
-  <script
+  <script>
+    window.__reduxState__ = {{ reduxState | json | safe }};
+  </script>
 {% endblock %}

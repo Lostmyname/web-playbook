@@ -1,7 +1,11 @@
 import React from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import routes from '../../universal/routes';
+import reducers from '../../universal/store/reducers';
+import storeEnhancer from '../../universal/store/storeEnhancer';
 
 module.exports = function (req, res, next) {
   match({ routes, location: req.url }, function (error, redirectLocation, renderProps) {
@@ -18,10 +22,18 @@ module.exports = function (req, res, next) {
 };
 
 function handleRender(res, renderProps) {
-  var App = React.createElement(RouterContext, renderProps);
-  var appHtml = renderToString(App);
+  var store = createStore(reducers, {}, storeEnhancer);
 
-  res.status(200).render('react', { appHtml });
+  var App = (
+    <Provider store={store}>
+      <RouterContext {...renderProps} />
+    </Provider>
+  );
+
+  var appHtml = renderToString(App);
+  var reduxState = store.getState();
+
+  res.status(200).render('react', { appHtml, reduxState });
 }
 
 function handleRedirect(res, redirect) {
