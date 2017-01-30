@@ -61,6 +61,7 @@
     "postcss-loader": "1.2.2",
     "promise": "7.1.1",
     "react-dev-utils": "^0.4.2",
+    "react-jobs": "^0.6.2",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
     "recompose": "^0.22.0",

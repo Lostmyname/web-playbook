@@ -4831,6 +4831,12 @@ react-dom@^15.3.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
+react-jobs@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/react-jobs/-/react-jobs-0.6.2.tgz#f4b8be2f9545ff2a0c9dd8556393fe5b21159510"
+  dependencies:
+    react-tree-walker "^1.0.0"
+
 react-redux@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.2.tgz#3d9878f5f71c6fafcd45de1fbb162ea31f389814"
@@ -4850,6 +4856,10 @@ react-router@^3.0.2:
     invariant "^2.2.1"
     loose-envify "^1.2.0"
     warning "^3.0.0"
+
+react-tree-walker@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-tree-walker/-/react-tree-walker-1.0.0.tgz#061f719232a5b77b01fbab21b8ee6a3ab7be7085"
 
 react@^15.3.0:
   version "15.4.2"

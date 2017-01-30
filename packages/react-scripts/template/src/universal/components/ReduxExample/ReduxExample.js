@@ -14,8 +14,8 @@ var enhance = connect(
 
 var Test = props => (
   <div>
-    <div>{props.test}</div>
-    <button onClick={props.onTestClick}>Test dispatching Redux action</button>
+    <p>test state: <code>{props.test}</code></p>
+    <button onClick={props.onTestClick}>Dispatch TEST action</button>
   </div>
 );
 

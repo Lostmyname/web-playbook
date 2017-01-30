@@ -4,5 +4,6 @@
   <div id="root">{{ appHtml | safe }}</div>
   <script>
     window.__reduxState__ = {{ reduxState | json | safe }};
+    window.{{ jobsStateId }} = {{ jobsState | json | safe }};
   </script>
 {% endblock %}

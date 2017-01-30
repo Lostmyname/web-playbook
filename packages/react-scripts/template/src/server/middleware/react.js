@@ -3,12 +3,17 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
+import { runJobs } from 'react-jobs/ssr';
 import routes from '../../universal/routes';
 import reducers from '../../universal/store/reducers';
 import storeEnhancer from '../../universal/store/storeEnhancer';
 
-module.exports = function (req, res, next) {
-  match({ routes, location: req.url }, function (error, redirectLocation, renderProps) {
+module.exports = function reactMiddleware(req, res, next) {
+  match({ routes, location: req.url }, function (
+    error,
+    redirectLocation,
+    renderProps
+  ) {
     if (error) {
       handleError(res, error);
     } else if (redirectLocation) {
@@ -23,17 +28,27 @@ module.exports = function (req, res, next) {
 
 function handleRender(res, renderProps) {
   var store = createStore(reducers, {}, storeEnhancer);
+  var reduxState = store.getState();
 
-  var App = (
+  var app = (
     <Provider store={store}>
       <RouterContext {...renderProps} />
     </Provider>
   );
 
-  var appHtml = renderToString(App);
-  var reduxState = store.getState();
+  runJobs(app).then(jobsResult => {
+    var { appWithJobs, state, STATE_IDENTIFIER } = jobsResult;
+    var appHtml = renderToString(appWithJobs);
 
-  res.status(200).render('react', { appHtml, reduxState });
+    res
+      .status(200)
+      .render('react', {
+        appHtml,
+        reduxState,
+        jobsState: state,
+        jobsStateId: STATE_IDENTIFIER
+      });
+  });
 }
 
 function handleRedirect(res, redirect) {

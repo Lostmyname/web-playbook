@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './components/App';
-import Home from './components/Home';
-import Test from './components/Test';
+import Home from './components/App/Home';
+import Test from './components/App/Test';
 
 export default (
   <Route
