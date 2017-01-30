@@ -3,13 +3,14 @@ var spawn = require('cross-spawn');
 var script = process.argv[2];
 var args = process.argv.slice(3);
 
-var runtime = process.NOD_ENV === 'production' ? 'node' : 'babel-node';
+var runtime = 'node';
 
 switch (script) {
 case 'build':
 case 'eject':
 case 'start':
 case 'server':
+  runtime = 'babel-node';
 case 'test':
   var result = spawn.sync(
     runtime,
