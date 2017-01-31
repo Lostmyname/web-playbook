@@ -12,7 +12,7 @@ This is a living project: the tooling in this repo powers our web applications d
 
 #### Prototyping
 - 🆕 [Create a new app (with plays included)](plays/prototyping/create-a-new-app.md)
-- ✏️️ [Create a new play](plays/prototyping/create-a-new-play.md)
+- ✏️️ [Create a new play](https://github.com/lostmyname-labs/web-playbook/issues/new)
 
 #### Tooling
 
