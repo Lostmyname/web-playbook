@@ -1,26 +1,25 @@
 import React, { PropTypes } from 'react';
-import { withJob } from 'react-jobs/ssr';
+import withJob from '../../hocs/withJobs';
 import * as posts from '../../models/posts';
 
-var enhance = withJob(
-  () => posts.get()
-);
+var enhance = withJob('posts', () => posts.get());
 
-var JobsTest = ({ job }) => (
+var JobsTest = ({ jobState }) => (
   <div>
-    {job.result
-      ? JSON.stringify(job.result)
+    {jobState.data
+      ? JSON.stringify(jobState.data)
       : 'Job not yet resolved'
     }
   </div>
 );
 
 JobsTest.propTypes = {
-  job: PropTypes.shape({
-    completed: PropTypes.bool.isRequired,
-    inProgress: PropTypes.bool.isRequired,
-    result: PropTypes.any,
-    error: PropTypes.any
+  jobState: PropTypes.shape({
+    // completed: PropTypes.bool.isRequired,
+    // inProgress: PropTypes.bool.isRequired,
+    // result: PropTypes.any,
+    // error: PropTypes.any
+    data: PropTypes.any
   })
 };
 
