@@ -3,11 +3,9 @@ import { withPosts } from '../../models/posts';
 
 var JobsTest = ({ job }) => (
   <div>
-    <p>Example 1</p>
+    <p>Example 2 (fetching same data)</p>
     {job.result
-      ? job.result.map(post => (
-        <div key={post.id}>{post.title}</div>
-      ))
+      ? JSON.stringify(job.result)
       : 'Job not yet resolved'
     }
   </div>

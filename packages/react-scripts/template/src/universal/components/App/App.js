@@ -2,7 +2,7 @@
 import React, { PropTypes } from 'react';
 import Clock from '../Clock';
 import ReduxExample from '../ReduxExample';
-import JobsExample from '../JobsExample';
+import { JobsExample1, JobsExample2 } from '../JobsExample';
 
 var App = ({ children }) => (
   <div>
@@ -16,7 +16,8 @@ var App = ({ children }) => (
     <ReduxExample />
 
     <h3>react-jobs test</h3>
-    <JobsExample />
+    <JobsExample1 />
+    <JobsExample2 />
   </div>
 );
 
