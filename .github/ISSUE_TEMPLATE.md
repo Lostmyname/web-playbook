@@ -5,7 +5,6 @@ It's normally a good idea to start with an issue before opening a PR
 -->
 
 ### Checklist
-- [ ] List the proposed play in README linking it to this issue.
 - [ ] Define the problems and solutions in this issue
 - [ ] Get feedback. Should a new play be proposed? Open PR or close issue.
 
