@@ -3,7 +3,6 @@
 {% block content %}
   <div id="root">{{ appHtml | safe }}</div>
   <script>
-    window.__reduxState__ = {{ reduxState | json | safe }};
-    window.{{ jobsStateId }} = {{ jobsState | json | safe }};
+    window.__storeState__ = {{ storeState | json | safe }};
   </script>
 {% endblock %}

@@ -21,13 +21,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(publicFolder));
 
-app.get('*', react);
-
 // Static files will almost certainly be served behind a CDN e.g. fastly
 // in which case this will only serve to handle requests to warm up the cache.
 // If the CDN routes requests to a static server (assuming assets are uploaded
 // there when the app gets deployed) requests will never reach this server.
 app.use(express.static('build'));
+
+app.get('*', react);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
