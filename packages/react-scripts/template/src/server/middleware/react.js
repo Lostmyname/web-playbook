@@ -3,7 +3,6 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
-import { runJobs } from 'react-jobs/ssr';
 import routes from '../../universal/routes';
 import reducers from '../../universal/store/reducers';
 import storeEnhancer from '../../universal/store/storeEnhancer';
@@ -36,19 +35,14 @@ function handleRender(res, renderProps) {
     </Provider>
   );
 
-  runJobs(app).then(jobsResult => {
-    var { appWithJobs, state, STATE_IDENTIFIER } = jobsResult;
-    var appHtml = renderToString(appWithJobs);
+  var appHtml = renderToString(app);
 
-    res
-      .status(200)
-      .render('react', {
-        appHtml,
-        reduxState,
-        jobsState: state,
-        jobsStateId: STATE_IDENTIFIER
-      });
-  });
+  res
+    .status(200)
+    .render('react', {
+      appHtml,
+      reduxState
+    });
 }
 
 function handleRedirect(res, redirect) {
